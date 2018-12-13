@@ -48,6 +48,7 @@ def mkdirs(paths):
 def mkdir(path):
     if not os.path.exists(path):
         os.makedirs(path)
+        print("created directory %s" % path)
 
 ###############################################################################
 # Code from
