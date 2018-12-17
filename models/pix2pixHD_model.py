@@ -153,12 +153,8 @@ class Pix2PixHDModel(BaseModel):
 
     def forward(self, label, inst, image, feat, infer=False):
 
-        print(label.size())
-
         # Encode Inputs
         input_label, inst_map, real_image, feat_map = self.encode_input(label, inst, image, feat)  
-
-        print(input_label.size())
 
         # Fake Generation
         if self.use_features:
