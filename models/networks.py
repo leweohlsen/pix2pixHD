@@ -4,7 +4,6 @@ import torch
 import torch.nn as nn
 import functools
 from torch.autograd import Variable
-import torchvision.transforms as transforms
 import numpy as np
 
 ###############################################################################
@@ -410,9 +409,6 @@ class Vgg19(torch.nn.Module):
                 param.requires_grad = False
 
     def forward(self, X):
-        print(X.size())
-        transforms.Lambda(lambda x: X.repeat(1, 3, 1, 1) )
-        print(X.size())
         h_relu1 = self.slice1(X)
         h_relu2 = self.slice2(h_relu1)        
         h_relu3 = self.slice3(h_relu2)        

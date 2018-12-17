@@ -32,7 +32,7 @@ def make_dataset(dir):
 
 
 def default_loader(path):
-    return Image.open(path).convert('L')
+    return Image.open(path).convert('RGB')
 
 
 class ImageFolder(data.Dataset):
